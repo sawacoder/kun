@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Create contact
+{% endblock %}
+
+
+{% block conten %}
+    <div class="row">
+        <div class="offset-2 mt-3 col-8">
+            <form action="{% url 'contact:delete' contact.id %}" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="alert alert-danger">
+                    Wanna delete <strong>{{ contact.name }}</strong>
+                </div>
+                <input type="submit" value="delete" class="btn btn-success mt-2 ">
+                <a href="{% url 'contact:contact' %}" class="mt-2 btn btn-warning">Back</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

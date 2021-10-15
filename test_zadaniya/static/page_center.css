@@ -1,0 +1,85 @@
+.news_page .news {
+    width: 244px;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.news_page .news .col1 {
+    display: flex;
+    align-items: center;
+}
+
+.news_page .news .col1 .square {
+    width: 16px;
+    height: 16px;
+    background-color: darkblue;
+    border-radius: 50%;
+}
+
+.news_page .news .box {
+    border-bottom: 1px solid lightgray;
+    padding: 13px 0px;
+    border-right: 1px solid lightgray;
+}
+
+.news_page .news .box .title h6 a {
+    color: black;
+    text-decoration: none;
+    line-height: 21px;
+}
+
+.news_page .news .box .title h6 a:hover {
+    color: blue;
+}
+
+
+.center {
+    width: 745px;
+}
+
+.right_page .news {
+    width: 244px;
+    margin-top: 30px;
+}
+
+.right_page .news .col1 {
+    display: flex;
+    align-items: center;
+}
+
+.right_page .news .col1 .square {
+    width: 16px;
+    height: 16px;
+    background-color: darkblue;
+    border-radius: 50%;
+}
+
+.right_page .news .box {
+    width: 300px;
+    border: 1px solid lightgray;
+    padding: 8px 9px;
+    margin-bottom: 18px;
+}
+
+.right_page .news .box .title h6 a {
+    color: black;
+    text-decoration: none;
+    line-height: 21px;
+}
+
+.right_page .news .box:hover {
+    border: 1px solid black;
+}
+
+.block-center .title-center p {
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 32px;
+    color: #000000;
+}
+
+.block-center text p {
+    font-size: 19px;
+    line-height: 31px;
+    color: #000000;
+}

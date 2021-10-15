@@ -1,0 +1,37 @@
+.detail {
+    width: 777px;
+}
+
+
+.news_page .news {
+    width: 244px;
+}
+
+.news_page .news .col1 {
+    display: flex;
+    align-items: center;
+}
+
+.news_page .news .col1 .square {
+    width: 16px;
+    height: 16px;
+    background-color: darkblue;
+    border-radius: 50%;
+}
+
+.news_page .news .box {
+    border-bottom: 1px solid lightgray;
+    padding: 13px 0px;
+    border-right: 1px solid lightgray;
+}
+
+.news_page .news .box .title h6 a {
+    color: black;
+    text-decoration: none;
+    line-height: 21px;
+}
+
+.news_page .news .box .title h6 a:hover {
+    color: blue;
+}
+

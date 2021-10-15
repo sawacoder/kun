@@ -1,0 +1,28 @@
+.blue {
+    height: 42px;
+    padding-right: 15px;
+    padding-left: 15px;
+    align-items: center;
+    background-color: #1C2680;
+}
+
+.blue-second{
+    height: 180px;
+    padding-right: 363px;
+    padding-left: 15px;
+    background-color: #17206a;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+
+.blue-second p{
+    font-size: 13px;
+}
+
+.blue a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: 600;
+}

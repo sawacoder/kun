@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Contact list
+{% endblock %}
+
+
+{% block conten %}
+    <div class="row">
+        <div class="offset-4 mt-3 col-3">
+            <div class="card text-center">
+                <a href="{% url 'contact:detail' pk=contact.id %}" class="h1">{{ contact.name }}</a>
+                {% if contact.phone_set.all %}
+                    <ul class="list-group">
+                        {% for phone in contact.phone_set.all %}
+                            <li class="list-group-item"><strong>{{ phone.type }}</strong>{{ phone.number }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <a href="{% url 'contact:contact' %}" class="btn mt-2 btn-warning">Back</a>
+            <a href="{% url 'contact:add_page' contact.id %}" class="btn mx-4 mt-2 btn-success">Add Number</a>
+            <a href="{% url 'contact:delete_page' contact.id %}" class="btn mt-2 btn-danger">Delete</a>
+        </div>
+    </div>
+{% endblock %}

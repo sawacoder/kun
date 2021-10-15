@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Create contact
+{% endblock %}
+
+
+{% block conten %}
+    <div class="row">
+        <div class="offset-2 mt-3 col-8">
+            <form action="{% url 'contact:create' %}" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="form-group">
+                    <label for="name">Contact name</label>
+                    <input type="text" class="form-control" name='name' id="name"
+                           placeholder="Sunnat">
+                </div>
+
+                <div class="mb-3">
+                    <label for="number">Contact number</label>
+                    <input type="number" class="form-control" name='number' id="number"
+                           placeholder="+998908085480">
+                </div>
+                <select class="form-select form-control " name="type">
+                    {% for choise in choises %}
+                        {% if forloop.counter == 1 %}
+                            <option selected class="form-control" value="{{ choise.name }}">{{ choise.value }}</option>
+                        {% else %}
+                            <option selected value="{{ choise.name }}">{{ choise.value }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+                <input type="submit" value="save" class="btn btn-success mt-2 ">
+                <a href="{% url 'contact:contact' %}" class="mt-2 btn btn-warning">Back</a>
+            </form>
+
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    News
+{% endblock %}
+
+
+{% block content %}
+    {% if post %}
+        <div class="border border-1 m-2">
+            <h2>{{ post.title | safe }}</h2>
+            <p class="pl-2">{{ post.overview | safe }}</p>
+            <p class="pl-2">{{ post.body | safe }}</p>
+            <p class="pl-2">Posted At : {{ post.created_at |date }} {{ post.created_at |time }}</p>
+            <p class="pl-2">Author {{ post.posted_by }}</p>
+        </div>
+        <hr/>
+        <a href="{% url 'yangiliklar:news' %}">Back</a>
+    {% else %}
+        <div class="alert alert-warning">Posts not available</div>
+    {% endif %}
+{% endblock %}

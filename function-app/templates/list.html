@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Contact list
+{% endblock %}
+
+
+{% block conten %}
+    <div class="row mx-3">
+
+        {% for contact in contacts %}
+            <div class="mt-4 col-3">
+                <div class="card text-center" style="width: 300px">
+                    <a href="{% url 'contact:detail' pk=contact.id %}" class="h1">{{ contact.name }}</a>
+                    {% if contact.phone_set.all %}
+                        <ul class="list-group">
+                            {% for phone in contact.phone_set.all %}
+                                <li class="list-group-item"><strong
+                                        class="mr-1"> {{ phone.type }}-</strong>{{ phone.number }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>{% endfor %}
+
+
+    </div><a href="{% url 'contact:create_page' %}" class="btn ml-4 mt-5 btn-success">Create contact</a>
+    {% if contacts.paginator.page_range %}
+        <nav aria-label="Page navigation example">
+
+
+            <ul class="pagination">
+                {% for paginato in contacts.paginator.page_range %}
+                    <li class="page-item"><a class="page-link" href="?page={{ paginato }}">{{ paginato }}</a></li>
+                {% endfor %}
+
+            </ul>
+
+        </nav>
+    {% endif %}
+{% endblock %}

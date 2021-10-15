@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for object in object_list %}
+        <div class="container">
+            <div class="row">
+                <div class="col-6 offset-3">
+                    <h2><a href="{% url 'detail' object.pk %}">{{ object.title | slice:'20' }}</a></h2>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="text-center">
+        {% if user.is_authenticated %}
+            <h3>{{ user.username }}</h3>
+            <h3><a href="{% url 'logout' %}">Log out</a></h3>
+        {% else %}
+            <p>
+                <a href="{% url 'login' %}">Login</a>
+            </p>
+        {% endif %}
+    </div>
+
+
+
+
+
+    <button class="btn btn-dark m-3"><a href="{% url 'new' %}">Yangi post qoshish</a></button>
+
+{% endblock %}
